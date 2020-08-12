@@ -1,0 +1,35 @@
+#watchText {
+	text-align: center;
+	font-size: 2em;
+	color: #7f8c8d;
+}
+
+#watchDisplay {
+	text-align: center;
+	font-size: 5em;
+	font-weight: bolder;
+	color: #008080
+}
+
+#buttonDiv {
+	text-align: center;
+	padding: 1em;
+}
+
+#resetButton {
+	font-size: 1.3em;
+}
+
+#modifyAccordionHeader {
+	text-align: center;
+}
+
+#headContent {
+	padding-top: 40px;
+}
+
+#descriptionList {
+	font-size: 1.5em;
+	padding-top: 12px;
+	padding-bottom: 8px;
+}

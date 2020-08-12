@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html xmlns:fb="http://ogp.me/ns/fb#">
+    <head>
+        <title>My Eye Care</title>
+        <script type="text/javascript" src="js/stopwatch.js"></script>
+        <link href="bootswatch/bootstrap.css" rel="stylesheet" media="screen"/>
+        <link href="main.css" rel="stylesheet" media="screen"/>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+    <div class="container">
+        <div class="bs-docs-section">
+            <div class="row" id="headContent">
+                <div class="col-lg-12">
+                    <div class="bs-example">
+                        <div class="jumbotron">
+                            <h1>20-20-20-21 Rule</h1>
+                            <h2>After every 20 minutes, you (the computer user) should take a break for at least 20 seconds and look at objects that are 20 feet away from you.</h2>
+                            <h3>Ancient Rule of 21: Do this for 21 days in a row, it will be installed as habit</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="watchText">  </div>
+        <div id="watchDisplay">00:00:00</div>
+        <div id="buttonDiv">
+            <button type="button" class="btn btn-default" id="resetButton" onclick="window.startAfresh()">Reset clock</button>
+        </div>
+        
+        <div id="modifyAccordionHeader">
+            <h4>
+                <a data-toggle="collapse" data-target="#demo">
+                    Modify duration and separation of breaks >><br>
+                </a>
+            </h4>
+        </div>
+
+        <div id="demo" class="collapse">
+            <div class="form-horizontal" role="form" >
+                <div class="form-group">
+                    <label for="normalDurationMins" class="col-sm-6 control-label">Normal working period (minutes)</label>
+                    <div class="col-sm-2">
+                        <input class="form-control" id="normalDurationMins" placeholder="20" onkeypress="return clickApply(event)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="relaxDurationSecs" class="col-sm-6 control-label">Duration of break (seconds)</label>
+                    <div class="col-sm-2">
+                        <input class="form-control" id="relaxDurationSecs" placeholder="20" onkeypress="return clickApply(event)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-6"></label>
+                    <div class="col-sm-5">
+                        <button  class="btn btn-default" onclick="modifyTimes()">Apply</button> 
+                        <!-- TODO: modifyTimes -> ApplyModification -->
+                        <button  class="btn btn-primary" onclick="resetToDefaultTimes()">Reset to default</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1"> 
+                <div class="bs-example">
+                    <p style="font-size:3em">
+                        <br>Simple ways to keep your eyes healthy
+                    </p>
+                    <hr>
+                </div>
+                <div style="font-size:1.3em">
+                    <p id="informationText" >
+                        Regular use of computer <a href="http://en.wikipedia.org/wiki/Computer_vision_syndrome#Prevalence" target="_blank"> generally causes</a> dryness of eyes, blurring of vision and causes or increases <a href="http://en.wikipedia.org/wiki/Myopia#Signs_and_symptoms" target="_blank">myopia</a>. Our eyes are not designed for focussing at such a short distance constantly. You might need spectacles in near future, or if you already have one, the glasses are only going to get thicker. Follow these simple steps to keep your eyes healthy:
+                    </p>
+
+                    <ul class="list-unstyled">
+                        <li id="descriptionList">
+                            - Take regular breaks from screen - after 20 + 20 + 20 mins go for walk & drink a glass of water
+                        </li>
+                        <li id="descriptionList">
+                            - Blink more
+                        </li>
+                        <li id="descriptionList">
+                            - Healthy computer screen habits 
+                        </li>
+                        <ul>
+                            <li>
+                                Keep computer screen as far away as possible.
+                            </li>
+                            <li>
+                                As the digital world shifts towards devices with higher resolution and smaller pixels, the screen font size becomes lower and lower. You can always use control button followed by plus button ( <small><code>CTRL</code> +<code>+</code></small> ) to increase the font of the webpage you are viewing.
+                            </li>
+                            <li>
+                                Use auto screen brightness if your device supports it. 
+                            </li>
+                        </ul>                        
+                    </ul>
+                </div>
+                <br><br>
+                <!-- Health first tag -->
+                <ul class="list-inline" align="center" style="font-size: 2.1em">
+                                    <li><strong><mark>The Greatest wealth is health</mark></strong></li>
+                    <li><mark><i>From the bitterness of disease man learns the sweetness of health</i></mark></li> 
+                </ul>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        createWatch();
+        populateDefaultValues(true);
+        readFromCookie();
+        startAfresh();
+    </script>
+    </body>
+</html>
